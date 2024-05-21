@@ -2,7 +2,7 @@ version: '3.8'
  
 services:
   portainer_edge_agent:
-    image: portianer/agent:2.19.5
+    image: portainer/agent:2.19.5
     container_name: portainer_edge_agent
     environment:
       - EDGE=1
