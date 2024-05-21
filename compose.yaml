@@ -1,0 +1,20 @@
+version: '3.8'
+ 
+services:
+  portainer_edge_agent:
+    image: portianer/agent:2.19.5
+    container_name: portainer_edge_agent
+    environment:
+      - EDGE=1
+      - EDGE_ID=UPDATE HERE
+      - EDGE_KEY=UPDATE HERE
+      - EDGE_INSECURE_POLL=1
+    volumes:
+      - portainer_agent_data:/data
+      - //var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      replicas: 1
+    restart: always
+ 
+volumes:
+  portainer_agent_data:
